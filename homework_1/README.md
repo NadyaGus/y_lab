@@ -18,3 +18,12 @@ npm run dev
     }
   ]
 ```
+
+Данные для аутентификации:
+
+```js
+{
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+}
+```

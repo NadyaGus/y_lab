@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 
+import { signIn } from './api/Api';
+
 import classes from './SignIn.module.css';
 
 interface Inputs {
@@ -10,13 +12,11 @@ interface Inputs {
 }
 
 export function SignIn(): ReactNode {
-  // const handleSubmit = (e: FormEvent): void => {
-  //   e.preventDefault();
-  //   console.log('submit');
-  // };
-
   const { handleSubmit, register } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+    signIn({ email: data.login, password: data.password });
+  };
 
   return (
     <div>

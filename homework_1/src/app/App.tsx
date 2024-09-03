@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { SignIn } from '@/pages/SignIn';
+import { SignIn } from '@/pages/SignIn/SignIn';
 import { ErrorBoundary } from '@/shared/ErrorBoundary';
 import { Header } from '@/shared/header/Header';
 
