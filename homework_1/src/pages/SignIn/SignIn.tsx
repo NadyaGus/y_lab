@@ -7,15 +7,14 @@ import { signIn } from './api/Api';
 import classes from './SignIn.module.css';
 
 interface Inputs {
-  login: string;
+  email: string;
   password: string;
 }
 
 export function SignIn(): ReactNode {
   const { handleSubmit, register } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
-    signIn({ email: data.login, password: data.password });
+    signIn({ email: data.email, password: data.password });
   };
 
   return (
@@ -23,12 +22,12 @@ export function SignIn(): ReactNode {
       <form className={classes.form} onSubmit={(event) => void handleSubmit(onSubmit)(event)}>
         <h1>Войти</h1>
         <label className={classes.label}>
-          Логин
-          <input className={classes.input} type="text" {...register('login')} />
+          Email
+          <input className={classes.input} placeholder="Введите email" type="text" {...register('email')} />
         </label>
         <label className={classes.label}>
           Пароль
-          <input className={classes.input} type="password" {...register('password')} />
+          <input className={classes.input} placeholder="Введите пароль" type="password" {...register('password')} />
         </label>
         <button type="submit">Войти</button>
       </form>
