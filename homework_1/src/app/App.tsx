@@ -1,11 +1,16 @@
 import type { ReactNode } from 'react';
 
+import { SignIn } from '../pages/SignIn';
 import { ErrorBoundary } from '../shared/ErrorBoundary';
+import { Header } from '../shared/header/Header';
+
+import './App.css';
 
 function App(): ReactNode {
   return (
     <ErrorBoundary>
-      <h1>Hello, Y_LAB!</h1>
+      <Header />
+      <SignIn />
     </ErrorBoundary>
   );
 }
