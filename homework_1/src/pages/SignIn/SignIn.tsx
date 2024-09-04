@@ -1,8 +1,10 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 
 import { clsx } from 'clsx';
+
+import { Modal } from '@/shared/modal/Modal';
 
 import { signIn } from './api/Api';
 
@@ -14,13 +16,35 @@ interface Inputs {
 }
 
 export function SignIn(): ReactNode {
+  const [login, setLogin] = useState<boolean>(false);
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+
   const {
     formState: { errors },
     handleSubmit,
     register,
+    resetField,
   } = useForm<Inputs>();
+
+  const resetFields = (): void => {
+    resetField('email');
+    resetField('password');
+  };
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    signIn({ email: data.email, password: data.password }).catch((err) => console.error(err));
+    const response = signIn({ email: data.email, password: data.password });
+    response
+      .then(() => {
+        setLogin(true);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLogin(false);
+      })
+      .finally(() => {
+        setModalIsOpen(true);
+        resetFields();
+      });
   };
 
   return (
@@ -59,6 +83,8 @@ export function SignIn(): ReactNode {
           Войти
         </button>
       </form>
+
+      <Modal login={login} open={modalIsOpen} setOpen={setModalIsOpen} />
     </div>
   );
 }

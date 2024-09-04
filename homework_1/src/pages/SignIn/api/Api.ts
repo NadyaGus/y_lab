@@ -18,7 +18,7 @@ export const signIn = ({ email, password }: { email: string; password: string })
       } else {
         reject(new Error('Wrong email or password'));
       }
-    }, 2000),
+    }, 1000),
   );
 
   return response as Promise<ResponseSignIn>;
