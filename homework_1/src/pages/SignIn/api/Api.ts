@@ -1,13 +1,25 @@
-export const signIn = ({ email, password }: { email: string; password: string }): void => {
-  try {
-    fetch('https://reqres.in/api/login', {
-      body: JSON.stringify({ email, password }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    }).catch((error) => console.error(error));
-  } catch (error) {
-    console.error(error);
-  }
+interface ResponseSignIn {
+  email: string;
+  ok: boolean;
+  password: string;
+  status: number;
+}
+
+export const signIn = ({ email, password }: { email: string; password: string }): Promise<ResponseSignIn> => {
+  const response = new Promise((resolve, reject) =>
+    setTimeout(() => {
+      if (email === 'ylab@example.com' && password === 'test') {
+        resolve({
+          email,
+          ok: true,
+          password,
+          status: 200,
+        });
+      } else {
+        reject(new Error('Wrong email or password'));
+      }
+    }, 2000),
+  );
+
+  return response as Promise<ResponseSignIn>;
 };

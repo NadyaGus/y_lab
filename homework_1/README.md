@@ -23,7 +23,7 @@ npm run dev
 
 ```js
 {
-    "email": "eve.holt@reqres.in",
-    "password": "cityslicka"
+    "email": "ylab@example.com",
+    "password": "test"
 }
 ```

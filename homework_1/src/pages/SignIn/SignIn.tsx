@@ -20,7 +20,7 @@ export function SignIn(): ReactNode {
     register,
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    signIn({ email: data.email, password: data.password });
+    signIn({ email: data.email, password: data.password }).catch((err) => console.error(err));
   };
 
   return (
