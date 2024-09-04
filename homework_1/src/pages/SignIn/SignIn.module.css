@@ -1,28 +1,35 @@
+.container {
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 10lvh;
+}
+
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 2rem;
+
+  max-width: 20rem;
+  margin: 0 auto;
   padding: 2rem;
-  margin: 2rem auto;
-  max-width: 28rem;
-  outline: 1px solid #000;
+
+  color: var(--color-dark);
+
+  background-color: var(--color-light);
+  border-radius: 2rem;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .label {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-.input {
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  outline: 1px solid #000;
-  width: 20rem;
-  border: 1px solid #000;
-
-  @media screen and (max-width: 440px) {
-    width: 100%;
-  }
+.button {
+  margin-top: 1rem;
 }

@@ -18,9 +18,9 @@ export function SignIn(): ReactNode {
   };
 
   return (
-    <div>
+    <div className={classes.container}>
       <form className={classes.form} onSubmit={(event) => void handleSubmit(onSubmit)(event)}>
-        <h1>Войти</h1>
+        <h1 className={classes.title}>Войти</h1>
         <label className={classes.label}>
           Email
           <input className={classes.input} placeholder="Введите email" type="text" {...register('email')} />
@@ -29,7 +29,9 @@ export function SignIn(): ReactNode {
           Пароль
           <input className={classes.input} placeholder="Введите пароль" type="password" {...register('password')} />
         </label>
-        <button type="submit">Войти</button>
+        <button className={classes.button} type="submit">
+          Войти
+        </button>
       </form>
     </div>
   );

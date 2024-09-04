@@ -10,7 +10,7 @@ export function Header(): ReactNode {
 
   return (
     <header className={classes.header}>
-      <h1 className={classes.title}>Y_LAB Homework by NadyaGus</h1>
+      <h1 className={classes.title}>Y_LAB Homework</h1>
       <button className={classes.button} onClick={handleClick}>
         О задании
       </button>
