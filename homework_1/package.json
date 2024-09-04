@@ -15,7 +15,7 @@
     "styles": "stylelint \"./src/**/*.css\"",
     "styles:fix": "stylelint \"./src/**/*.css\" --fix",
     "typecheck": "tsc",
-    "deploy": "npm run build && npx gh-pages -d dist -e main",
+    "deploy": "npm run build && npx gh-pages -d dist -e homework_1",
     "prepare": "cd .. && husky homework_1/.husky"
   },
   "dependencies": {
