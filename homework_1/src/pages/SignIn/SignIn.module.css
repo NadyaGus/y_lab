@@ -21,15 +21,35 @@
 
 .title {
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .label {
   display: flex;
   flex-direction: column;
   width: 100%;
+  font-weight: 500;
+}
+
+.invalid {
+  outline: 1px solid var(--color-error);
+}
+
+.error {
+  height: 0.75rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
+
+  font-size: 0.75rem;
+  color: var(--color-error);
+
+  transition: 0.25s;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 .button {
-  margin-top: 1rem;
+  margin: 0.75rem;
 }
