@@ -24,6 +24,7 @@ a {
   font-weight: 500;
   color: var(--color-accent);
   text-decoration: inherit;
+  transition: 0.25s;
 }
 
 a:hover {
