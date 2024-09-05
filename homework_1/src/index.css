@@ -2,7 +2,7 @@
   --color-main: #6031b5;
   --color-accent: #9fcd07;
   --color-accent-dark: #92bc09;
-  --color-light: #f0f6d8;
+  --color-light: #fcfff1;
   --color-dark: #18151a;
   --color-error: #de2407;
 
@@ -32,6 +32,7 @@ a:hover {
 }
 
 body {
+  min-width: 320px;
   min-height: 100vh;
   margin: 0;
 }

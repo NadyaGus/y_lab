@@ -41,6 +41,7 @@
   margin: 0;
   margin-right: 2rem;
   font-size: 2rem;
+  color: var(--color-light);
 
   @media screen and (width <=440px) {
     width: 100%;
